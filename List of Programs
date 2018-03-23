@@ -1,13 +1,13 @@
-1.   WAP to reverse a string using STL Stack.
-2.   WAP to implement STACK using dynamuc memory.
-3_A. WAP to implement templated STACK class.
-3_B. WAP to convert an infix expression to postfix expression.
-4_A. WAP to detect palindrome string using STL Queue.
-4_B. WAP to implement Circular Queue using dyanamic memory.
-5_A. WAP to implement templated Queue class.
-5_B. WAP to implement Stack using STL Queue.
-5_C. WAP to implement Queue using STL Stack.
-6_A. WAP to implement Singly Linked List.
-6_B. WAP to implement templated Singly Linked List.
-7_A. WAP to implement Stack using SLL.
-7_B. WAP to implement Queue using SLL.
+[X]1.   WAP to reverse a string using STL Stack. 
+[X]2.   WAP to implement STACK using dynamic memory.
+[X]3_A. WAP to implement templated STACK class.
+[X]3_B. WAP to convert an infix expression to postfix expression.
+[X]4_A. WAP to detect palindrome string using STL Queue.
+[X]4_B. WAP to implement Circular Queue using dyanamic memory.
+[X]5_A. WAP to implement templated Queue class.
+[]5_B. WAP to implement Stack using STL Queue.
+[]5_C. WAP to implement Queue using STL Stack.
+[]6_A. WAP to implement Singly Linked List.
+[]6_B. WAP to implement templated Singly Linked List.
+[]7_A. WAP to implement Stack using SLL.
+[]7_B. WAP to implement Queue using SLL.
