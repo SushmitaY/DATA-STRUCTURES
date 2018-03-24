@@ -59,14 +59,16 @@ void queue::enqueue(int ele){
     Output: None
     Return value: None
     */
-    s2.push(ele);
     while(!s1.empty()){
 	s2.push(s1.top());
 	s1.pop();
     }
-    stack<int> temp = s1;
-    s1 = s2;
-    s2 = temp;
+    s1.push(ele);
+    while(!s2.empty()){
+	s1.push(s2.top());
+	s2.pop();
+    }
+    
     curr_size++;
 }
 
