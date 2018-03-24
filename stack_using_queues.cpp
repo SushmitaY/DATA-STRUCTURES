@@ -7,7 +7,13 @@
 using namespace std;
 
 class stack{
-
+	/*   			
+	objective: Create a class to implement Stack using STL Queues
+	input parameters: none
+	output value: none
+	description:  Class definition
+	approach: Class definition provides data member and member functions for the Stack class
+	*/
 	queue<int> q1,q2;
 	int curr_size;
 	public:
@@ -39,6 +45,8 @@ void stack::push(int ele){
 bool stack::isEmpty(){
     if(q1.empty())
 	return true;	
+    else
+	return false;
 }
 
 void stack::pop(){
