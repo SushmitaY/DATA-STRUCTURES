@@ -5,8 +5,8 @@
 [X]4_A. WAP to detect palindrome string using STL Queue.
 [X]4_B. WAP to implement Circular Queue using dyanamic memory.
 [X]5_A. WAP to implement templated Queue class.
-[]5_B. WAP to implement Stack using STL Queue.
-[]5_C. WAP to implement Queue using STL Stack.
+[X]5_B. WAP to implement Stack using STL Queue.
+[X]5_C. WAP to implement Queue using STL Stack.
 []6_A. WAP to implement Singly Linked List.
 []6_B. WAP to implement templated Singly Linked List.
 []7_A. WAP to implement Stack using SLL.
