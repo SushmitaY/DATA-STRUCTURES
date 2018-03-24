@@ -17,12 +17,23 @@ class stack{
 	queue<int> q1,q2;
 	int curr_size;
 	public:
+	   stack();
 	   void push(int);
 	   void pop();
            int top();
 	   bool isEmpty();
 	   void stack_status();
 };
+
+stack::stack(){
+    /*
+    Objective: To construct an object of class stack and initialize size of the stack with 0.
+    Input: None
+    Output: None
+    Return value: None
+    */
+	curr_size = 0;
+}
 
 void stack::push(int ele){
     /*
