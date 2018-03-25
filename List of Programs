@@ -7,7 +7,7 @@
 [X]5_A. WAP to implement templated Queue class.
 [X]5_B. WAP to implement Stack using STL Queue.
 [X]5_C. WAP to implement Queue using STL Stack.
-[]6_A. WAP to implement Singly Linked List.
-[]6_B. WAP to implement templated Singly Linked List.
+[X]6_A. WAP to implement Singly Linked List.
+[X]6_B. WAP to implement templated Singly Linked List.
 []7_A. WAP to implement Stack using SLL.
 []7_B. WAP to implement Queue using SLL.
