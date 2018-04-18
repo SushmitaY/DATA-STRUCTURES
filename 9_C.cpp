@@ -12,8 +12,8 @@ class student
     /*
     Objective : Class definition for student.
     Description : Data Members : Roll number of a student, Name of the student, Grade of the student.
-    		  Member Functions : getDate() -> Take input for data members from the user
-				     showData() -> Displays the value of data members. 
+    Member Functions : getDate() -> Take input for data members from the user
+				       showData() -> Displays the value of data members. 
     */
     private:
 	int roll_no;        
@@ -82,7 +82,7 @@ void student::setGrade(char g){
 	grade = g;
 }
 
-void write(ofstream &f,student s){
+void write(ofstream &fout,student s){
 
     /*
     Objective : To write an object of class student into file.
@@ -91,10 +91,10 @@ void write(ofstream &f,student s){
     Side Effect : The object passed is appended at the end of the file. 
     */
 
-    f.write((char*)&s,sizeof(s));  
+    fout.write((char*)&s,sizeof(s));  
 }
 
-void read(ifstream &f){
+void read(ifstream &fin){
 
     /*
     Objective : To read the file 'student.dat'
@@ -104,8 +104,8 @@ void read(ifstream &f){
 
     student s;
     cout<<"\n\n\t\t\tSTUDENT FILE\n\n";
-    while(f.read((char*)&s,sizeof(s)))
-	s.showData();
+    while(fin.read((char*)&s,sizeof(s)))
+		s.showData();
 }
 
 
@@ -113,10 +113,8 @@ int main()
 {
 	ofstream fout;
 	ifstream fin;
-	/*fout.open("student_record.dat", ios::out);
+	fout.open("student_record.dat", ios::binary);
 	student s;
-	s.getData();
-	fout.write((char*)&s,sizeof(s));
 	write(fout,student(1,"John",'B'));
 	write(fout,student(2,"Ron",'C'));
 	write(fout,student(3,"Harry",'F'));
@@ -126,44 +124,45 @@ int main()
 	write(fout,student(7,"Daniel",'E'));
 	write(fout,student(8,"Jerry",'B'));
 	write(fout,student(9,"April",'B'));
-	write(fout,student(10,"Natalie",'A'));*/
+	write(fout,student(10,"Nata",'A'));
+	fout.close();
 	
-	fin.open("student.dat", ios::in);
+	fin.open("student_record.dat", ios::binary);
 	cout<<fin.tellg();		//again set the reading pointer at beginning(for reading entire database) 
-        cout<<"\n\n\t\t\tFILE CONTENTS:\n";
-        read(fin);  
+    cout<<"\n\n\t\t\tFILE CONTENTS:\n";
+    read(fin);  
 	cout<<fin.tellg();
 	int rno;
 	long pos;
 	char g;
 	cout<<"\n\nEnter rollno of student whose record is to be modified: ";
 	cin>>rno;
-	student s;
-	fin.seekg(0);		//sets the reading pointer of the file at the beginning(for searching)
-	while(!fin.eof())
+	fin.close();
+	fstream f;
+	f.open("student_record.dat", ios::binary|ios::in|ios::out);
+	while(!f.eof())
 	{
-		pos = fin.tellg();	//storing the position of reading pointer which is at the beginning of current object being searched
-		fin.read((char *)&s, sizeof(s));
-		if(s.getRoll_no() == rno)
+		pos = f.tellg();	//storing the position of reading pointer which is at the beginning of current object being searched
+		f.read((char *)&s, sizeof(s));
+		if(s.getRoll_no() == rno )
 		{
 			cout<<"\nEnter new grade  : ";
 			cin>>g;
 			s.setGrade(g);
-			fout.seekp(pos);	//updating the write pointer to point at beginning of the object with the matching roll number
-			fout.write((char *)&s, sizeof(s));
+			f.seekp(pos);	//updating the write pointer to point at beginning of the object with the matching roll number
+			f.write((char *)&s, sizeof(s));
 			break;
 		}
 	}
-	if(fin.eof())
+	if(f.eof())
 	{
 		cout<<"\nRecord not found in the file..!!\n";
 		exit(1);
 	}
-
-       fin.seekg(0);		//again set the reading pointer at beginning(for reading entire database) 
-       cout<<"\n\n\t\t\tNEW FILE CONTENTS:\n";
-       read(fin);       
-       fin.close();
-       fout.close();
-       return 0;
+	f.close();
+	fin.open("student_record.dat", ios::binary);
+    cout<<"\n\n\t\t\tNEW FILE CONTENTS:\n";
+    read(fin);       
+    fin.close();
+    return 0;
 }
