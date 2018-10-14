@@ -18,8 +18,7 @@ bool isOperator(char ch){
 	*/
 	if(ch=='+' || ch=='-' || ch=='*' || ch=='/' || ch=='^')
 		return true;
-	else
-		return false;
+	return false;
 }
 
 int precedence(char opr){
