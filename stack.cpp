@@ -91,8 +91,7 @@ bool stack<T>::isEmpty(){
     */
     if( size() == 0 )
         return true;
-    else
-        return false;
+    return false;
 }
 
 template<typename T>
@@ -107,8 +106,7 @@ bool stack<T>::isFull(){
     */
     if( size() == capacity )
         return true;
-    else
-        return false;
+    return false;
 }
 
 template<typename T>
