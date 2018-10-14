@@ -56,8 +56,7 @@ void stack::push(int ele){
 bool stack::isEmpty(){
     if(q1.empty())
 	return true;	
-    else
-	return false;
+    return false;
 }
 
 void stack::pop(){
