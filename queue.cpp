@@ -77,8 +77,7 @@ bool queue::isEmpty(){
     */
     if( size() == 0 )
         return true;
-    else
-        return false;
+    return false;
 }
 
 bool queue::isFull(){
@@ -91,8 +90,7 @@ bool queue::isFull(){
     */
     if( size() == capacity )
         return true;
-    else
-        return false;
+    return false;
 }
 
 void queue::enqueue(int ele){
